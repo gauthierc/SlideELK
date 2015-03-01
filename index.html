@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ELK - Présentation ElasticSearch-Logstash-Kibana</title>
+
+		<meta name="description" content="Présentation ElasticSearch-Logstash-Kibana">
+		<meta name="author" content="Gauthier C.">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>ELK</h1>
+					<h3>ElasticSearch-Logstash-Kibana</h3>
+					<p>
+						<small>Présentation de <a href="http://gauthierc.github.io/SlideELK">Gauthier C.</a> / <a href="http://twitter.com/CattGr">@CattGr</a></small>
+					</p>
+				</section>
+
+       <!-- ########################################################################################## -->
+                          
+                                <section id="abstract">
+                                          <h2>En 30 minutes</h2>
+
+                                          <ol>
+                                              <li>Avant ...</li>
+                                              <li>Présentation de la pile ELK</li>
+                                              <li>ElasticSearch</li>
+                                              <li>Logstash</li>
+                                              <li>Kibana 3</li>
+                                              <li>Kibana 4</li>
+                                          </ol>
+                                </section>
+
+       <!-- ########################################################################################## -->
+       
+         <section>
+					<section id="avant">
+						<h2>Avant ...</h2>
+                                                <h3>Et bien oui, ElasticSearch n'a pas toujours exister</h3>
+					</section>
+
+                               <section id="ilyalongtemps">
+                                   <h3>Il y a très longtemps</h3>
+                                        <ul>
+                                            <li class="fragment">Fichiers de logs réparties sur x serveurs.</li>
+                                            <li class="fragment">Difficile de retrouver l'information.</li>
+                                            <li class="fragment">Impossible de faire de la corrélation.</li>
+                                            <li class="fragment">Pas d'archivage des journaux (1 an mais pas plus).</li>
+                                            <li class="fragment">Des jours pour trouver une information.</li>
+                                        </ul>
+				</section>
+                                <section id="ensuite">
+                                   <h3>Ensuite</h3>
+                                        <ul>
+                                            <li class="fragment">Rsyslog centralisé.</li>
+                                            <li class="fragment">Consolidation des fichiers par type de logs.</li>
+                                            <li class="fragment">Orodatage précis</li>
+                                            <li class="fragment">[bz|z]grep, awk, sed</li>
+                                            <li class="fragment">Parfois des heures pour trouver une information.</li>
+                                        </ul>
+				</section>
+         </section>
+       <!-- ########################################################################################## -->
+ 
+         <section>
+					<section id="ELK">
+						<h2>Présentation de la pile ELK</h2>
+					</section>
+                                        <section>
+                                            <h2>ELK c'est quoi?</h2>
+                                         	<ul>
+                		                    <li class="fragment">Elasticsearch - Lucene based search server</li>
+                	                            <li class="fragment">Logstash - Log pipeline and processor</li>
+                		                    <li class="fragment">Kibana - Log analytics frontend for Elasticsearch</li>
+                	                        </ul>
+				</section>
+         </section>
+       <!-- ########################################################################################## -->
+       <!-- ########################################################################################## -->
+			</div>
+
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
