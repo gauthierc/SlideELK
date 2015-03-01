@@ -77,18 +77,28 @@
                                             <li class="fragment">Fichiers de logs réparties sur x serveurs.</li>
                                             <li class="fragment">Difficile de retrouver l'information.</li>
                                             <li class="fragment">Impossible de faire de la corrélation.</li>
-                                            <li class="fragment">Pas d'archivage des journaux (1 an mais pas plus).</li>
-                                            <li class="fragment">Des jours pour trouver une information.</li>
+                                            <li class="fragment">Pas d'archivage des journaux (quelques jours au plus).</li>
+                                            <li class="fragment">Impossible de trouver une vieille information.</li>
                                         </ul>
 				</section>
                                 <section id="ensuite">
-                                   <h3>Ensuite</h3>
+                                   <h3>Première amélioration</h3>
                                         <ul>
                                             <li class="fragment">Rsyslog centralisé.</li>
                                             <li class="fragment">Consolidation des fichiers par type de logs.</li>
-                                            <li class="fragment">Orodatage précis</li>
+                                            <li class="fragment">Horodatage précis.</li>
                                             <li class="fragment">[bz|z]grep, awk, sed</li>
                                             <li class="fragment">Parfois des heures pour trouver une information.</li>
+                                        </ul>
+				</section>
+                                <section id="maintenant">
+                                   <h3>Mise en place d'ELK</h3>
+                                        <ul>
+                                            <li class="fragment">Quelques secondes pour retouver une information.</li>
+                                            <li class="fragment">Recherche et corrélation possible dans plusieur fichiers de logs.</li>
+                                            <li class="fragment">Détection de comportement anormale.</li>
+                                            <li class="fragment">Tableau de bord personalisable.</li>
+                                            <li class="fragment">Filtres multicritères.</li>
                                         </ul>
 				</section>
          </section>
@@ -101,14 +111,57 @@
                                         <section>
                                             <h2>ELK c'est quoi?</h2>
                                          	<ul>
-                		                    <li class="fragment">Elasticsearch - Lucene based search server</li>
-                	                            <li class="fragment">Logstash - Log pipeline and processor</li>
-                		                    <li class="fragment">Kibana - Log analytics frontend for Elasticsearch</li>
+                		                    <li class="fragment">Elasticsearch - base NoSql distribué et moteur de recherche Lucene</li>
+                	                            <li class="fragment">Logstash - ETL spécialisé dans la gestion des logs</li>
+                		                    <li class="fragment">Kibana - Interface graphique pour Elasticsearch</li>
                 	                        </ul>
-				</section>
+				        </section>
          </section>
        <!-- ########################################################################################## -->
+ 
+         <section>
+                                        <section>
+                                            <h2>ElasticSearch</h2>
+                                                    ElasticSearch est un support de stockage haute performance permettant d’effectuer des recherches full-text en un éclair.
+                                        </section>
+                                        <section>
+                                            <h3>ElasticSearch est:</h3>
+                                                    <ul>
+                                                        <li class="fragment">Orienté Document</li>
+                                                        <li class="fragment">Sans schéma (pas de définition stricte du contenu des index)</li>
+                                                        <li class="fragment">Distribué sur plusieurs nœuds</li>
+                                                        <li class="fragment">Hautement disponible</li>
+                                                        <li class="fragment">Basé sur le moteur de recherche full-text Lucene</li>
+                                                        <li class="fragment">Accessible à partir d’une API REST</li>
+                                                        <li class="fragment">Open source</li>
+                	                        </ul>
+				        </section>
+         </section>
        <!-- ########################################################################################## -->
+ 
+         <section>
+                                        <section>
+                                            <h2>LogStash</h2>
+                                        </section>
+                                        <section>
+                                            <h3>LogStash est un ETL (Extract-Transform-Load)</h3>
+                                            Il permet nativement de :
+                                                    <ul>
+                                                        <li class="fragment">Récupérer les logs provenant de sources variées, </li>
+                                                        <li class="fragment">Transformer les logs vers de multiples formats, </li>
+                                                        <li class="fragment">Sauvegarder le résultat de la transformation vers différents systèmes de stockage.</li>
+                	                        </ul>
+				        </section>
+                                        <section>
+                                            <h3>LogStash propose par défaut :</h3>
+                                                        <li class="fragment">41 entrées : dont tcp, zeromq, twitter, file, collectd, file, eventlog, etc. </li>
+                                                        <li class="fragment">20 codecs : dont json, json_lines, multiline, etc. </li>
+                                                        <li class="fragment">50 filtres : dont grok, date, geoip, mutate, etc. </li>
+                                                        <li class="fragment">55 sorties : dont elasticsearch, stdout, rabbitmq, tcp, etc. </li>
+                	                        </ul>
+				        </section>
+         </section>
+        <!-- ########################################################################################## -->
 			</div>
 
 		</div>
