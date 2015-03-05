@@ -56,10 +56,14 @@
                                           <ol>
                                               <li>Avant ...</li>
                                               <li>Présentation de la pile ELK</li>
-                                              <li>ElasticSearch</li>
-                                              <li>Logstash</li>
-                                              <li>Kibana 3</li>
-                                              <li>Kibana 4</li>
+                                              <ul>
+                                                    <li>ElasticSearch</li>
+                                                    <li>Logstash</li>
+                                                    <li>Kibana</li>
+                                              </ul>
+                                              <li>Architecture</li>
+                                              <li>Utilisation</li>
+                                              <li>Outils annexes</li>
                                           </ol>
                                 </section>
 
@@ -106,7 +110,7 @@
  
          <section>
 					<section id="ELK">
-						<h2>Présentation de la pile ELK</h2>
+						<h1>Présentation de la pile ELK</h1>
 					</section>
                                         <section>
                                             <h2>ELK c'est quoi?</h2>
@@ -116,30 +120,21 @@
                 		                    <li class="fragment">Kibana - Interface graphique pour Elasticsearch</li>
                 	                        </ul>
 				        </section>
-         </section>
-       <!-- ########################################################################################## -->
  
-         <section>
                                         <section>
                                             <h2>ElasticSearch</h2>
-                                                    ElasticSearch est un support de stockage haute performance permettant d’effectuer des recherches full-text en un éclair.
-                                        </section>
-                                        <section>
+                                                    ElasticSearch est un support de stockage haute performance permettant d’effectuer des recherches full-text en un éclair sur des Gigas de données.
                                             <h3>ElasticSearch est:</h3>
                                                     <ul>
                                                         <li class="fragment">Orienté Document</li>
                                                         <li class="fragment">Sans schéma (pas de définition stricte du contenu des index)</li>
-                                                        <li class="fragment">Distribué sur plusieurs nœuds</li>
+                                                        <li class="fragment">Possibilité de distribué sur plusieurs nœuds</li>
                                                         <li class="fragment">Hautement disponible</li>
                                                         <li class="fragment">Basé sur le moteur de recherche full-text Lucene</li>
                                                         <li class="fragment">Accessible à partir d’une API REST</li>
                                                         <li class="fragment">Open source</li>
                 	                        </ul>
 				        </section>
-         </section>
-       <!-- ########################################################################################## -->
- 
-         <section>
                                         <section>
                                             <h2>LogStash</h2>
                                         </section>
@@ -151,13 +146,22 @@
                                                         <li class="fragment">Transformer les logs vers de multiples formats, </li>
                                                         <li class="fragment">Sauvegarder le résultat de la transformation vers différents systèmes de stockage.</li>
                 	                        </ul>
+                                            LogStash propose par défaut: 
+                                                <ul>
+                                                        <li class="fragment">41 entrées : syslog, zeromq, file, collectd, pipe, eventlog, etc. </li>
+                                                        <li class="fragment">20 codecs : json, json_lines, multiline, etc... </li>
+                                                        <li class="fragment">50 filtres : grok, date, geoip, mutate, etc... </li>
+                                                        <li class="fragment">55 sorties : elasticsearch, stdout, rabbitmq, graphite, etc...</li>
+                	                        </ul>
 				        </section>
                                         <section>
-                                            <h3>LogStash propose par défaut :</h3>
-                                                        <li class="fragment">41 entrées : dont tcp, zeromq, twitter, file, collectd, file, eventlog, etc. </li>
-                                                        <li class="fragment">20 codecs : dont json, json_lines, multiline, etc. </li>
-                                                        <li class="fragment">50 filtres : dont grok, date, geoip, mutate, etc. </li>
-                                                        <li class="fragment">55 sorties : dont elasticsearch, stdout, rabbitmq, tcp, etc. </li>
+                                            <h2>Kibana</h2>
+                                        </section>
+                                        <section>
+                                            <h3>Kibana est une interface web qui permet d'interroger ElasticSearch</h3>
+                                            Il permet de :
+                                                    <ul>
+                                                        <li class="fragment"> </li>
                 	                        </ul>
 				        </section>
          </section>
