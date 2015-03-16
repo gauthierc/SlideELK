@@ -96,12 +96,12 @@
                                         </ul>
 				</section>
                                 <section id="maintenant">
-                                   <h3>Mise en place d'ELK</h3>
+                                   <h3>Depuis la mise en place d'ELK</h3>
                                         <ul>
                                             <li class="fragment">Quelques secondes pour retouver une information.</li>
                                             <li class="fragment">Recherche et corrélation possible dans plusieur fichiers de logs.</li>
                                             <li class="fragment">Détection de comportement anormale.</li>
-                                            <li class="fragment">Tableau de bord personalisable.</li>
+                                            <li class="fragment">Tableau de bord personnalisable.</li>
                                             <li class="fragment">Filtres multicritères.</li>
                                         </ul>
 				</section>
@@ -115,16 +115,16 @@
                                         <section>
                                             <h2>ELK c'est quoi?</h2>
                                          	<ul>
-                		                    <li class="fragment">Elasticsearch - base NoSql distribué et moteur de recherche Lucene</li>
-                	                            <li class="fragment">Logstash - ETL spécialisé dans la gestion des logs</li>
-                		                    <li class="fragment">Kibana - Interface graphique pour Elasticsearch</li>
+                                                    <li class="fragment"><b>Elasticsearch</b> - base NoSql distribué et moteur de recherche Lucene</li>
+                                                    <li class="fragment"><b>Logstash</b> - ETL spécialisé dans la gestion des logs</li>
+                                                    <li class="fragment"><b>Kibana</b> - Interface graphique pour Elasticsearch</li>
                 	                        </ul>
 				        </section>
  
                                         <section>
+                                            <img src="images/logo-elastic.png" align="left" style="background:none; border:none; box-shadow:none;" />
                                             <h2>ElasticSearch</h2>
                                                     ElasticSearch est un support de stockage haute performance permettant d’effectuer des recherches full-text en un éclair sur des Gigas de données.
-                                            <h3>ElasticSearch est:</h3>
                                                     <ul>
                                                         <li class="fragment">Orienté Document</li>
                                                         <li class="fragment">Sans schéma (pas de définition stricte du contenu des index)</li>
@@ -139,19 +139,22 @@
                                             <h2>LogStash</h2>
                                         </section>
                                         <section>
+                                            <img src="images/logstash.png" align="left" style="background:none; border:none; box-shadow:none;"  height="200" />
                                             <h3>LogStash est un ETL (Extract-Transform-Load)</h3>
-                                            Il permet nativement de :
+                                            <p class="fragment">Il permet nativement de :</p>
                                                     <ul>
                                                         <li class="fragment">Récupérer les logs provenant de sources variées, </li>
                                                         <li class="fragment">Transformer les logs vers de multiples formats, </li>
                                                         <li class="fragment">Sauvegarder le résultat de la transformation vers différents systèmes de stockage.</li>
                 	                        </ul>
-                                            LogStash propose par défaut: 
+                                        </section>
+                                        <section>
+                                            <h3>LogStash propose par défaut:</h3>
                                                 <ul>
-                                                        <li class="fragment">41 entrées : syslog, zeromq, file, collectd, pipe, eventlog, etc. </li>
-                                                        <li class="fragment">20 codecs : json, json_lines, multiline, etc... </li>
-                                                        <li class="fragment">50 filtres : grok, date, geoip, mutate, etc... </li>
-                                                        <li class="fragment">55 sorties : elasticsearch, stdout, rabbitmq, graphite, etc...</li>
+                                                    <li class="fragment"><b>41 entrées</b> : syslog, zeromq, file, collectd, pipe, eventlog, etc. </li>
+                                                    <li class="fragment"><b>20 codecs</b> : json, json_lines, multiline, etc... </li>
+                                                    <li class="fragment"><b>50 filtres</b> : grok, date, geoip, mutate, etc... </li>
+                                                    <li class="fragment"><b>55 sorties</b> : elasticsearch, stdout, rabbitmq, graphite, etc...</li>
                 	                        </ul>
 				        </section>
                                         <section>
@@ -159,7 +162,6 @@
                                         </section>
                                         <section>
                                             <h3>Kibana est une interface web qui permet d'interroger ElasticSearch</h3>
-                                            Il permet de :
                                                     <ul>
                                                         <li class="fragment"> </li>
                 	                        </ul>
