@@ -51,16 +51,17 @@
        <!-- ########################################################################################## -->
                           
                                 <section id="abstract">
-                                          <h2>En 30 minutes</h2>
+                                          <h2>En 40 minutes ou plus</h2>
 
                                           <ol>
                                               <li>Avant ...</li>
-                                              <li>Présentation de la pile ELK</li>
+                                              <li>Présentation de la pile&nbsp;ELK</li>
                                               <ul>
                                                     <li>ElasticSearch</li>
                                                     <li>Logstash</li>
                                                     <li>Kibana</li>
                                               </ul>
+                                              <li>Démo</li>
                                               <li>Architecture</li>
                                               <li>Utilisation</li>
                                               <li>Outils annexes</li>
@@ -115,9 +116,9 @@
                                         <section>
                                             <h2>ELK c'est quoi?</h2>
                                          	<ul>
-                                                    <li class="fragment"><b>Elasticsearch</b> - base NoSql distribué et moteur de recherche Lucene</li>
-                                                    <li class="fragment"><b>Logstash</b> - ETL spécialisé dans la gestion des logs</li>
-                                                    <li class="fragment"><b>Kibana</b> - Interface graphique pour Elasticsearch</li>
+                                                    <li class="fragment"><b><font color=blue>E</font>lasticsearch</b> - base NoSql distribué et moteur de recherche Lucene</li>
+                                                    <li class="fragment"><b><font color=blue>L</font>ogstash</b> - ETL spécialisé dans la gestion des logs</li>
+                                                    <li class="fragment"><b><font color=blue>K</font>ibana</b> - Interface graphique pour Elasticsearch</li>
                 	                        </ul>
 				        </section>
  
@@ -156,7 +157,7 @@
                                         <section>
                                             <h3>LogStash propose par défaut:</h3>
                                                 <ul>
-                                                    <li class="fragment"><b>41 entrées</b> : syslog, zeromq, file, collectd, pipe, eventlog, etc. </li>
+                                                    <li class="fragment"><b>41 entrées</b> : syslog, zeromq, file, collectd, pipe, eventlog, etc... </li>
                                                     <li class="fragment"><b>20 codecs</b> : json, json_lines, multiline, etc... </li>
                                                     <li class="fragment"><b>50 filtres</b> : grok, date, geoip, mutate, etc... </li>
                                                     <li class="fragment"><b>55 sorties</b> : elasticsearch, stdout, rabbitmq, graphite, etc...</li>
@@ -168,10 +169,50 @@
                                         </section>
                                         <section>
                                             <h3>Kibana est l'interface web de référence d'ElasticSearch</h3>
+                                                    Depuis la version 4, les opérations dans kibana se décomposent en 3 parties :
                                                     <ul>
-                                                        <li class="fragment"> </li>
+                                                        <li class="fragment"><b>Discover</b>: permet de visualiser les données des indexes elasticsearch.</li>
+                                                        <li class="fragment"><b>Visualize</b>: cœur de kibana pour mettre en forme et aggréger les données dans des vues.  </li>
+                                                        <li class="fragment"><b>Dashboard</b>: pages de synthèses des vues.</li>
                 	                        </ul>
 				        </section>
+                                        <section>
+                                            <h3>Discover</h3>
+                                            <img src="images/discover.png" style="background:none; border:none; box-shadow:none;" />
+                                        </section>
+                                        <section>
+                                            <h3>Visualize</h3>
+                                            <img src="images/visualize.png" style="background:none; border:none; box-shadow:none;" />
+                                        </section>
+                                        <section>
+                                            <h3>Dashboard</h3>
+                                            <img src="images/dashboard.png" style="background:none; border:none; box-shadow:none;" />
+                                        </section>
+         </section>
+       <!-- ########################################################################################## -->
+         <section>
+                                        <section>
+                                            <h2><a href="http://localhost:5601/" target="_blank">Démo</a></h2>
+                                            <img src="images/Man-of-Steel.jpg" style="background:none; border:none; box-shadow:none;" />
+                                        </section>
+         </section>
+       <!-- ########################################################################################## -->
+         <section>
+                                        <section>
+                                            <h2>Architecture</h2>
+                                            <img src="images/architecture.png" style="background:none; border:none; box-shadow:none;" />
+                                        </section>
+         </section>
+       <!-- ########################################################################################## -->
+         <section>
+                                        <section>
+                                            <h2>Outils annexes</h2>
+                                                    <ul>
+                                                        <li class="fragment"><b>Curator</b>: Pour faire le ménage.</li>
+                                                        <li class="fragment"><b>Packetbeat</b>: Agent analyse du trafic à déployer sur les serveurs.</li>
+                                                        <li class="fragment"><b>Shield</b>: Limiter les accès à ElasticSearch.</li>
+                	                        </ul>
+                                        </section>
          </section>
         <!-- ########################################################################################## -->
 			</div>
