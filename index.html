@@ -59,7 +59,7 @@
                                               <li>Présentation&nbsp;d'ELK</li>
                                               <li>Démo</li>
                                               <li>Architecture</li>
-                                              <li>Utilisation</li>
+                                              <li>Alimentation avec LogStash</li>
                                               <li>Outils annexes</li>
                                           </ol>
                                 </section>
@@ -202,8 +202,74 @@
        <!-- ########################################################################################## -->
          <section>
                                         <section>
+                                            <h2>Alimentation avec LogStash</h2>
+                                            <h3>input</h3>
+					Exemple de fichier de configuration logstash
+                                           <pre><code data-trim contenteditable>
+input {
+    file {
+        type => "apache"
+        path => "/var/log/remote/HTTP/20*/*/vncache*.log"
+   }
+}
+                                          </code></pre>
+                                        </section>
+                                         <section>
+                                            <h3>filter</h3>
+                                           <pre><code data-trim contenteditable>
+filter {
+    if [loglevel] == "debug" { 
+         drop { } 
+      }
+    if [type] == "apache" {
+        grok {
+              patterns_dir => [ "/home/logstash/patterns" ]
+              match => [
+                "message", "%{SYSLOGBASE} %{COMBINEDAPACHELOG}",
+                "message", "%{COMBINEDAPACHELOG}"
+              ]
+              tag_on_failure => [ ]
+            }
+        date {
+            match  => [ 'timestamp', 'dd/MMM/yyyy:HH:mm:ss Z' ]
+            locale => "en"
+            timezone => "Europe/Paris"
+            target => "@timestamp"
+          }
+   }
+}
+                                          </code></pre>
+                                        </section>
+                                         <section>
+                                            <h3>output</h3>
+                                           <pre><code data-trim contenteditable>
+
+utput {
+        if [type] == "apache" {
+                   elasticsearch {
+                                 bind_host => "127.0.0.1"
+                                 host => "127.0.0.1"
+                                 index => "heberge-%{+YYYY.MM.dd}" 
+                                }
+        }
+} 
+                                          </code></pre>
+                                        </section>
+                                         <section>
+                                            <h2>Patterns</h2>
+					   De nombreuses règles par défaut dans /opt/logstash/patterns/
+                                           <pre><code data-trim contenteditable>
+SYSLOGBASE %{SYSLOGTIMESTAMP:timestamp} (?:%{SYSLOGFACILITY} )?%{SYSLOGHOST:logsource} %{SYSLOGPROG}:
+COMMONAPACHELOG %{IPORHOST:clientip} %{USER:ident} %{USER:auth} \[%{HTTPDATE:timestamp}\] "(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:response} (?:%{NUMBER:bytes}|-)
+                                          </code></pre>
+                                        </section>
+         </section>
+       <!-- ########################################################################################## -->
+         <section>
+                                        <section>
                                             <h2>Outils annexes</h2>
                                                     <ul>
+                                                        <li class="fragment"><b>Grok Debugger</b>: Permet de valider et tester les nouvelles règles grok. <a href="http://grokdebug.herokuapp.com/">http://grokdebug.herokuapp.com/</a></li>
                                                         <li class="fragment"><b>Curator</b>: Pour faire le ménage.</li>
                                                         <li class="fragment"><b>Packetbeat</b>: Agent analyse du trafic à déployer sur les serveurs.</li>
                                                         <li class="fragment"><b>Shield</b>: Limiter les accès à ElasticSearch.</li>
